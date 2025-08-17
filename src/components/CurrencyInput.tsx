@@ -288,7 +288,7 @@ export const CurrencyInput = () => {
             </div>
           </form>
           <div className="flex flex-col justify-center items-center mt-4 gap-2">
-            {!isFetching && <p>آخرین آپدیت قیمت برای {unit.date} میباشد</p>}
+            {!isFetching && <p>آخرین آپدیت قیمت برای {unit?.date} میباشد</p>}
             <button
               onClick={(e) => {
                 queryClient.invalidateQueries({ queryKey: ["exchange-rate"] });
