@@ -68,7 +68,7 @@ export const CurrencyInput = () => {
           <form className=" flex w-full mx-auto ">
             <div className=" relative mx-auto w-full flex max-w-[550px]">
               <button
-                className="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-e-0 border-gray-300 dark:border-gray-700 dark:text-white rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                className="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-e-0 border-gray-300  rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 "
                 type="button"
                 onClick={(e) => {
                   e.preventDefault();
@@ -93,9 +93,9 @@ export const CurrencyInput = () => {
                 </svg>
               </button>
               <div
-                className={` ${dropdown1} z-20 top-full absolute  bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-80 dark:bg-gray-700`}
+                className={` ${dropdown1} z-20 top-full absolute  bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-80`}
               >
-                <ul className="p-2 text-sm flex flex-col gap-3 text-gray-700 dark:text-gray-200">
+                <ul className="p-2 text-sm flex flex-col gap-3 text-gray-700 ">
                   <li>
                     <button
                       className="flex w-full justify-between px-4  items-center hover:bg-gray-200 rounded-lg p-1 "
@@ -143,12 +143,12 @@ export const CurrencyInput = () => {
                   </li>
                 </ul>
               </div>
-              <div className="relative w-full rounded-e-lg rounded-s-gray-100 rounded-s-2 border border-gray-300 focus:bg-neutral-400 focus:border-none  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white bg-gray-50 ">
+              <div className="relative w-full rounded-e-lg rounded-s-gray-100 rounded-s-2 border border-gray-300 focus:bg-neutral-400 focus:border-none  bg-gray-50 ">
                 <input
                   type="text"
-                  className="block absolute left-7 p-2.5 w-full z-20 text-sm text-gray-900  "
+                  className="block absolute left-7 p-2.5 z-20 text-sm w-2/3 border-none outline-none text-gray-900  "
                   placeholder={`${value}`}
-                  value={`${value} `}
+                  value={value}
                   onChange={(e) => {
                     setActiveInput("from");
                     setValue(+e.target.value);
@@ -161,14 +161,20 @@ export const CurrencyInput = () => {
                   <button
                     type="button"
                     className=" px-2"
-                    onClick={() => setValue((v) => v + 1)}
+                    onClick={() => {
+                      setValue((v) => v + 1);
+                      setActiveInput("from");
+                    }}
                   >
                     <CiSquarePlus className="m-0 p-0 w-5 h-5" />
                   </button>
                   <button
                     type="button"
                     className=" px-2"
-                    onClick={() => setValue((v) => (v > 0 ? v - 1 : v))}
+                    onClick={() => {
+                      setValue((v) => (v > 0 ? v - 1 : v));
+                      setActiveInput("from");
+                    }}
                   >
                     <CiSquareMinus className="m-0 p-0 w-5 h-5" />
                   </button>
@@ -179,7 +185,7 @@ export const CurrencyInput = () => {
           <form className=" flex w-full mx-auto ">
             <div className=" relative mx-auto w-full flex max-w-[550px]">
               <button
-                className="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-e-0 border-gray-300 dark:border-gray-700 dark:text-white rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                className="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 rounded-l-lg bg-gray-100 border border-e-0 border-gray-300 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300"
                 type="button"
                 onClick={(e) => {
                   e.preventDefault();
@@ -204,9 +210,9 @@ export const CurrencyInput = () => {
                 </svg>
               </button>
               <div
-                className={` ${dropdown2} z-10 top-full absolute  bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-80 dark:bg-gray-700`}
+                className={` ${dropdown2} z-10 top-full absolute  bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-80 `}
               >
-                <ul className="p-2 text-sm flex flex-col gap-3 text-gray-700 dark:text-gray-200">
+                <ul className="p-2 text-sm flex flex-col gap-3 text-gray-700 ">
                   <li>
                     <button
                       className="flex w-full justify-between px-4  items-center hover:bg-gray-200 rounded-lg p-1 "
@@ -254,12 +260,12 @@ export const CurrencyInput = () => {
                   </li>
                 </ul>
               </div>
-              <div className="relative w-full rounded-e-lg rounded-s-gray-100 rounded-s-2 border border-gray-300 focus:bg-neutral-400 focus:border-none  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white bg-gray-50 ">
+              <div className="relative w-full rounded-e-lg rounded-s-gray-100 rounded-s-2 border border-gray-300   bg-gray-50 ">
                 <input
                   type="text"
-                  className="block z-10 absolute left-7 p-2.5 w-full  text-sm text-gray-900  "
+                  className="block z-10 absolute border-none outline-none left-7 p-2.5 w-2/3  text-sm text-gray-900  "
                   placeholder={`${transfered}`}
-                  value={`${transfered}`}
+                  value={transfered}
                   onChange={(e) => {
                     setActiveInput("to");
                     setTransfered(+e.target.value);
@@ -272,14 +278,20 @@ export const CurrencyInput = () => {
                   <button
                     type="button"
                     className=" px-2"
-                    onClick={() => setTransfered((v) => v + 1)}
+                    onClick={() => {
+                      setTransfered((v) => v + 1);
+                      setActiveInput("to");
+                    }}
                   >
                     <CiSquarePlus className="m-0 p-0 w-5 h-5" />
                   </button>
                   <button
                     type="button"
-                    className=" px-2"
-                    onClick={() => setTransfered((v) => (v > 0 ? v - 1 : v))}
+                    className=" px-2 "
+                    onClick={() => {
+                      setTransfered((v) => (v > 0 ? v - 1 : v));
+                      setActiveInput("to");
+                    }}
                   >
                     <CiSquareMinus className="m-0 p-0 w-5 h-5" />
                   </button>
@@ -293,7 +305,7 @@ export const CurrencyInput = () => {
               onClick={(e) => {
                 queryClient.invalidateQueries({ queryKey: ["exchange-rate"] });
               }}
-              className="border rounded-lg w-auto px-4 hover:bg-blue-100 bg-gray-50"
+              className="border rounded-lg w-auto px-4 hover:bg-amber-50 bg-gray-50"
             >
               <p className="p-2">{isFetching ? "..." : "آپدیت نرخ دلار"}</p>
             </button>
